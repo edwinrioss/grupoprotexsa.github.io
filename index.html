@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Protexsa - Equipos Contra Incendio</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container">
@@ -46,12 +48,33 @@
         </div>
     </section>
 
+    <!-- Carrusel -->
+    <section class="carousel-section">
+        <div class="container">
+            <h2>Nuestro Trabajo</h2>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <img src="images/slide1.jpg" alt="Imagen 1" class="carousel-item active">
+                    <img src="images/slide2.jpg" alt="Imagen 2" class="carousel-item">
+                    <img src="images/slide3.jpg" alt="Imagen 3" class="carousel-item">
+                </div>
+                <button class="carousel-button prev">&lt;</button>
+                <button class="carousel-button next">&gt;</button>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contacto">
         <div class="container">
             <h2>Contáctanos</h2>
             <div class="contact-form">
                 <form action="https://formspree.io/f/mvzzgewk" method="POST" id="contactForm">
-                    <input type="hidden" name="_next" value="https://edwinrioss.github.io/grupoprotexsa.github.io/?submitted=true">
+                    <input type="hidden" name="_next"
+                        value="https://edwinrioss.github.io/grupoprotexsa.github.io/?submitted=true">
+                    <input type="hidden" name="_subject" value="Nuevo contacto de Protexsa">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_autoresponse"
+                        value="Gracias por contactarnos, en breve nos comunicaremos contigo.">
                     <div class="form-group">
                         <input type="text" name="nombre" placeholder="Nombre" required>
                     </div>
@@ -69,8 +92,14 @@
             </div>
         </div>
     </section>
-    
-    <!-- Agregar este script justo antes del cierre del body -->
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios"
+        class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32"
+            height="32">
+    </a>
+
     <script>
         // Función para limpiar el formulario
         function resetForm() {
@@ -80,13 +109,45 @@
                 window.history.replaceState({}, document.title, window.location.pathname);
             }
         }
-        
+
         // Ejecutar cuando la página cargue
         window.onload = resetForm;
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.carousel-container');
+            const items = document.querySelectorAll('.carousel-item');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                items.forEach(item => item.classList.remove('active'));
+                items[currentIndex].classList.add('active');
+            }
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel();
+            });
+
+            // Auto-avance cada 5 segundos
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            }, 5000);
+        });
     </script>
 
     <footer>
         <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
     </footer>
 </body>
+
 </html>
