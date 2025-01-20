@@ -50,8 +50,7 @@
         <div class="container">
             <h2>Contáctanos</h2>
             <div class="contact-form">
-                <form action="https://formspree.io/f/myzzqewk" method="POST" data-form-type="reset">
-                    <!-- Añadir campo oculto para la redirección -->
+                <form action="https://formspree.io/f/mvzzgewk" method="POST" id="contactForm">
                     <input type="hidden" name="_next" value="https://edwinrioss.github.io/grupoprotexsa.github.io/?submitted=true">
                     <div class="form-group">
                         <input type="text" name="nombre" placeholder="Nombre" required>
@@ -70,6 +69,21 @@
             </div>
         </div>
     </section>
+    
+    <!-- Agregar este script justo antes del cierre del body -->
+    <script>
+        // Función para limpiar el formulario
+        function resetForm() {
+            if (window.location.search.includes('submitted=true')) {
+                document.getElementById('contactForm').reset();
+                // Limpia el parámetro de la URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+        
+        // Ejecutar cuando la página cargue
+        window.onload = resetForm;
+    </script>
 
     <footer>
         <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
