@@ -151,51 +151,55 @@
         });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const carousel = document.querySelector('.carousel-container');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-        let currentIndex = 0;
-    
-        function updateCarousel() {
-            // Remove active class from all items
-            items.forEach(item => {
-                item.classList.remove('active', 'next', 'prev');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.carousel-container');
+            const items = document.querySelectorAll('.carousel-item');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                // Remove active class from all items
+                items.forEach(item => {
+                    item.classList.remove('active', 'next', 'prev');
+                });
+
+                // Add appropriate classes for smooth transition
+                items[currentIndex].classList.add('active');
+
+                // Prepare next and previous slides
+                const nextIndex = (currentIndex + 1) % items.length;
+                const prevIndex = (currentIndex - 1 + items.length) % items.length;
+
+                items[nextIndex].classList.add('next');
+                items[prevIndex].classList.add('prev');
+            }
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
             });
-    
-            // Add appropriate classes for smooth transition
-            items[currentIndex].classList.add('active');
-            
-            // Prepare next and previous slides
-            const nextIndex = (currentIndex + 1) % items.length;
-            const prevIndex = (currentIndex - 1 + items.length) % items.length;
-            
-            items[nextIndex].classList.add('next');
-            items[prevIndex].classList.add('prev');
-        }
-    
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % items.length;
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel();
+            });
+
+            // Auto-advance every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            }, 5000);
+
+            // Initial setup
             updateCarousel();
         });
-    
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            updateCarousel();
-        });
-    
-        // Auto-advance every 5 seconds
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-        }, 5000);
-    
-        // Initial setup
-        updateCarousel();
-    });
     </script>
+
+    <script src="js/carrrusel.js"></script>
+
+
 
 
     <footer>
