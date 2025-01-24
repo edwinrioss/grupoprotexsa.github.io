@@ -322,3 +322,12 @@ footer {
 .carousel-item.next {
     transform: translateX(100%);
 }
+
+.servicios-item {
+    transition: all 0.3s ease;
+}
+
+.servicios-item:hover {
+    background-color: #8B0000;
+    color: white;
+}
