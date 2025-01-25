@@ -28,23 +28,27 @@
         </div>
     </section>
 
-    <section class="services" id="servicios">
-        <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Equipos Contra Incendio</h3>
-                    <p>Venta e instalación de equipos de última generación para la protección contra incendios.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Mantenimiento</h3>
-                    <p>Servicio de mantenimiento preventivo y correctivo para sistemas contra incendios.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Asesoría</h3>
-                    <p>Consultoría especializada en normativas y regulaciones de seguridad contra incendios.</p>
-                </div>
-            </div>
+    <section class="nuestros-servicios">
+        <div class="servicio" onmouseover="this.style.backgroundColor='#8B0000'; this.style.color='white';"
+            onmouseout="this.style.backgroundColor='initial'; this.style.color='initial';">
+            <a href="equipos-contra-incendio.html">
+                <h3>Equipos Contra Incendio</h3>
+                <p>Servicios de recarga, equipo de seguridad y señalamientos.</p>
+            </a>
+        </div>
+        <div class="servicio" onmouseover="this.style.backgroundColor='#8B0000'; this.style.color='white';"
+            onmouseout="this.style.backgroundColor='initial'; this.style.color='initial';">
+            <a href="mantenimiento.html">
+                <h3>Mantenimiento</h3>
+                <p>Mantenimientos preventivos y correctivos, retardante de incendios.</p>
+            </a>
+        </div>
+        <div class="servicio" onmouseover="this.style.backgroundColor='#8B0000'; this.style.color='white';"
+            onmouseout="this.style.backgroundColor='initial'; this.style.color='initial';">
+            <a href="certificaciones.html">
+                <h3>Certificaciones</h3>
+                <p>Pruebas, certificaciones y cursos de primeros auxilios.</p>
+            </a>
         </div>
     </section>
 
@@ -151,53 +155,53 @@
         });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const carousel = document.querySelector('.carousel-container');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-        let currentIndex = 0;
-    
-        function updateCarousel() {
-            // Remove active class from all items
-            items.forEach(item => {
-                item.classList.remove('active', 'next', 'prev');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.carousel-container');
+            const items = document.querySelectorAll('.carousel-item');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                // Remove active class from all items
+                items.forEach(item => {
+                    item.classList.remove('active', 'next', 'prev');
+                });
+
+                // Add appropriate classes for smooth transition
+                items[currentIndex].classList.add('active');
+
+                // Prepare next and previous slides
+                const nextIndex = (currentIndex + 1) % items.length;
+                const prevIndex = (currentIndex - 1 + items.length) % items.length;
+
+                items[nextIndex].classList.add('next');
+                items[prevIndex].classList.add('prev');
+            }
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
             });
-    
-            // Add appropriate classes for smooth transition
-            items[currentIndex].classList.add('active');
-            
-            // Prepare next and previous slides
-            const nextIndex = (currentIndex + 1) % items.length;
-            const prevIndex = (currentIndex - 1 + items.length) % items.length;
-            
-            items[nextIndex].classList.add('next');
-            items[prevIndex].classList.add('prev');
-        }
-    
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % items.length;
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel();
+            });
+
+            // Auto-advance every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            }, 5000);
+
+            // Initial setup
             updateCarousel();
         });
-    
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            updateCarousel();
-        });
-    
-        // Auto-advance every 5 seconds
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-        }, 5000);
-    
-        // Initial setup
-        updateCarousel();
-    });
     </script>
 
-<script src="js/carrrusel.js"></script>
+    <script src="js/carrrusel.js"></script>
 
 
 
