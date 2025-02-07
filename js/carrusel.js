@@ -9,49 +9,52 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isTransitioning) return;
         isTransitioning = true;
 
-        // Primero removemos todas las clases
-        items.forEach(item => {
-            item.classList.remove('active', 'next', 'prev');
-            item.style.transform = 'translateX(100%)';
-        });
+        const nextIndex = direction === 'next' 
+            ? (currentIndex + 1) % items.length 
+            : (currentIndex - 1 + items.length) % items.length;
 
-        // Configuramos las posiciones iniciales
-        const prevIndex = (currentIndex - 1 + items.length) % items.length;
-        const nextIndex = (currentIndex + 1) % items.length;
+        // Posicionar siguiente/anterior imagen
+        items[nextIndex].style.transform = direction === 'next' 
+            ? 'translateX(100%)' 
+            : 'translateX(-100%)';
+        
+        // Asegurar que la imagen actual está visible
+        items[currentIndex].style.transform = 'translateX(0)';
 
-        if (direction === 'next') {
-            items[currentIndex].style.transform = 'translateX(-100%)';
-            items[nextIndex].style.transform = 'translateX(0)';
-            currentIndex = nextIndex;
-        } else {
-            items[currentIndex].style.transform = 'translateX(100%)';
-            items[prevIndex].style.transform = 'translateX(0)';
-            currentIndex = prevIndex;
-        }
+        // Forzar reflow
+        items[nextIndex].offsetHeight;
 
-        // Esperamos a que termine la transición
+        // Animar el deslizamiento
+        items[currentIndex].style.transform = direction === 'next' 
+            ? 'translateX(-100%)' 
+            : 'translateX(100%)';
+        items[nextIndex].style.transform = 'translateX(0)';
+
+        // Actualizar índice
+        currentIndex = nextIndex;
+
         setTimeout(() => {
             isTransitioning = false;
-        }, 500); // Este tiempo debe coincidir con la duración de la transición en CSS
+            // Reposicionar las demás imágenes fuera de vista
+            items.forEach((item, index) => {
+                if (index !== currentIndex) {
+                    item.style.transform = 'translateX(100%)';
+                }
+            });
+        }, 1000);
     }
 
     nextButton.addEventListener('click', () => {
-        if (!isTransitioning) {
-            updateCarousel('next');
-        }
+        if (!isTransitioning) updateCarousel('next');
     });
 
     prevButton.addEventListener('click', () => {
-        if (!isTransitioning) {
-            updateCarousel('prev');
-        }
+        if (!isTransitioning) updateCarousel('prev');
     });
 
-    // Auto-avance cada 5 segundos
+    // Auto-avance
     setInterval(() => {
-        if (!isTransitioning) {
-            updateCarousel('next');
-        }
+        if (!isTransitioning) updateCarousel('next');
     }, 5000);
 
     // Configuración inicial
