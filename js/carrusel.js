@@ -5,21 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     function updateCarousel(direction) {
+        // Primero removemos todas las clases
         items.forEach(item => {
             item.classList.remove('active', 'next', 'prev');
         });
 
-        items[currentIndex].classList.add('active');
-        
+        // Calculamos los índices
         const nextIndex = (currentIndex + 1) % items.length;
         const prevIndex = (currentIndex - 1 + items.length) % items.length;
-        
+
+        // Añadimos la clase active al elemento actual
+        items[currentIndex].classList.add('active');
+
         if (direction === 'next') {
             items[nextIndex].classList.add('next');
-            items[currentIndex].classList.add('prev');
+            items[prevIndex].classList.add('prev');
         } else {
             items[prevIndex].classList.add('prev');
-            items[currentIndex].classList.add('next');
+            items[nextIndex].classList.add('next');
         }
     }
 
