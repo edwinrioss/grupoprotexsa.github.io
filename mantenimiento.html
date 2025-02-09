@@ -1,20 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Protexsa - Equipos Contra Incendio</title>
+    <title>Protexsa - Servicios de Mantenimiento</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-mantenimiento.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .maintenance-section {
+            padding: 50px 0;
+        }
+
+        .maintenance-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .maintenance-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .maintenance-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+    </style>
 </head>
-
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">PROTEXSA</div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
+    <section class="hero">
+        <div class="container">
+            <h1>Servicios de Mantenimiento</h1>
+            <p>Mantenimiento profesional para garantizar la seguridad de sus instalaciones</p>
+        </div>
+    </section>
 
+    <section class="maintenance-section">
+        <div class="container">
+            <h2 class="section-title">Tipos de Mantenimiento</h2>
+            <div class="maintenance-container">
+                <div class="maintenance-card">
+                    <img src="images/preventivo.jpg" alt="Mantenimiento Preventivo">
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Inspecciones regulares y mantenimiento programado para prevenir fallos y garantizar el funcionamiento óptimo de sus equipos contra incendios.</p>
+                </div>
+                <div class="maintenance-card">
+                    <img src="images/correctivo.jpg" alt="Mantenimiento Correctivo">
+                    <h3>Mantenimiento Correctivo</h3>
+                    <p>Servicio de reparación y corrección de fallas en equipos contra incendios, garantizando una respuesta rápida y eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="maintenance-section">
+        <div class="container">
+            <h2 class="section-title">Aplicación de Retardante</h2>
+            <div class="maintenance-container">
+                <div class="maintenance-card">
+                    <img src="images/palapa-interior.jpg" alt="Palapa Interior">
+                    <h3>Palapa Interior</h3>
+                    <p>Tratamiento especializado para palapas interiores que proporciona protección contra el fuego sin afectar la estética natural.</p>
+                </div>
+                <div class="maintenance-card">
+                    <img src="images/palapa-exterior.jpg" alt="Palapa Exterior">
+                    <h3>Palapa Exterior</h3>
+                    <p>Aplicación de retardante resistente a la intemperie para palapas exteriores, garantizando durabilidad y protección.</p>
+                </div>
+                <div class="maintenance-card">
+                    <img src="images/alfombra.jpg" alt="Alfombra">
+                    <h3>Alfombra</h3>
+                    <p>Tratamiento ignífugo para alfombras que no altera su textura ni apariencia, ideal para hoteles y espacios comerciales.</p>
+                </div>
+                <div class="maintenance-card">
+                    <img src="images/madera.jpg" alt="Madera">
+                    <h3>Madera</h3>
+                    <p>Protección contra fuego para superficies de madera, preservando su aspecto natural mientras aumenta su resistencia al fuego.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20mantenimiento" 
+       class="whatsapp-button" 
+       target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" 
+             width="32" 
+             height="32">
+    </a>
 
     <footer>
         <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
     </footer>
 </body>
-
 </html>

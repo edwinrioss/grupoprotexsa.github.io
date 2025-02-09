@@ -1,20 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Protexsa - Equipos Contra Incendio</title>
+    <title>Protexsa - Equipos Contra Incendio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-equipos.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .equipment-section {
+            padding: 50px 0;
+        }
+
+        .equipment-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .equipment-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .equipment-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+    </style>
 </head>
-
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">PROTEXSA</div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
+    <section class="hero">
+        <div class="container">
+            <h1>Equipos Contra Incendio</h1>
+            <p>Soluciones profesionales para la protección contra incendios</p>
+        </div>
+    </section>
 
+    <section class="equipment-section">
+        <div class="container">
+            <h2 class="section-title">Servicios de Recargas de Extintores</h2>
+            <div class="equipment-container">
+                <div class="equipment-card">
+                    <img src="images/pqs.jpg" alt="Extintor PQS">
+                    <h3>Recarga de Polvo (PQS)</h3>
+                    <p>Ideal para fuegos clase A, B y C. Efectivo para la mayoría de los incendios comunes en oficinas, hogares e industrias.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/co2.jpg" alt="Extintor CO2">
+                    <h3>Bióxido de Carbono (CO2)</h3>
+                    <p>Perfecto para fuegos eléctricos y equipos sensibles. No deja residuos y es ideal para áreas con equipos electrónicos.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/aap.jpg" alt="Extintor AAP">
+                    <h3>Agua a Presión (AAP)</h3>
+                    <p>Específico para fuegos clase A. Excelente para materiales sólidos como madera, papel y telas.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/afff.jpg" alt="Extintor AFFF">
+                    <h3>AFFF</h3>
+                    <p>Espuma formadora de película acuosa, ideal para fuegos de líquidos inflamables y protección de derrames.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="equipment-section">
+        <div class="container">
+            <h2 class="section-title">Equipo de Seguridad</h2>
+            <div class="equipment-container">
+                <div class="equipment-card">
+                    <img src="images/traje-bombero.jpg" alt="Equipo de Bombero">
+                    <h3>Equipos de Bombero</h3>
+                    <p>Trajes completos certificados para protección contra fuego y altas temperaturas.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/cascos.jpg" alt="Cascos">
+                    <h3>Cascos</h3>
+                    <p>Cascos de seguridad certificados con resistencia al impacto y altas temperaturas.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/guantes.jpg" alt="Guantes">
+                    <h3>Guantes</h3>
+                    <p>Guantes especializados resistentes al fuego y con gran destreza manual.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/botas.jpg" alt="Botas">
+                    <h3>Botas</h3>
+                    <p>Botas de seguridad con protección térmica y resistencia a químicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="equipment-section">
+        <div class="container">
+            <h2 class="section-title">Tipos de Señalamientos</h2>
+            <div class="equipment-container">
+                <div class="equipment-card">
+                    <img src="images/preventivo.jpg" alt="Señalamientos Preventivos">
+                    <h3>Preventivos</h3>
+                    <p>Señales que advierten sobre riesgos potenciales y medidas de precaución.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/restrictivo.jpg" alt="Señalamientos Restrictivos">
+                    <h3>Restrictivos</h3>
+                    <p>Señales que indican prohibiciones y limitaciones en áreas específicas.</p>
+                </div>
+                <div class="equipment-card">
+                    <img src="images/informativo.jpg" alt="Señalamientos Informativos">
+                    <h3>Informativos</h3>
+                    <p>Señales que proporcionan información sobre rutas de evacuación y equipos de seguridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20equipos%20contra%20incendio" 
+       class="whatsapp-button" 
+       target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" 
+             width="32" 
+             height="32">
+    </a>
 
     <footer>
         <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
     </footer>
 </body>
-
 </html>

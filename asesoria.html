@@ -1,20 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Protexsa - Equipos Contra Incendio</title>
+    <title>Protexsa - Servicios de Asesoría</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-asesoria.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .consulting-section {
+            padding: 50px 0;
+        }
+
+        .consulting-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .consulting-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .consulting-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .certification-section {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+
+        .certification-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .certification-list {
+            text-align: left;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .certification-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .certification-list li {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .certification-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+        }
+    </style>
 </head>
-
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">PROTEXSA</div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
+    <section class="hero">
+        <div class="container">
+            <h1>Servicios de Asesoría</h1>
+            <p>Experiencia y certificación para su tranquilidad</p>
+        </div>
+    </section>
 
+    <section class="consulting-section">
+        <div class="container">
+            <h2 class="section-title">Certificaciones y Aprobaciones</h2>
+            <div class="consulting-container">
+                <div class="consulting-card">
+                    <img src="images/certificacion.jpg" alt="Certificaciones">
+                    <h3>Certificaciones Oficiales</h3>
+                    <p>Contamos con todas las certificaciones necesarias para validar y certificar equipos e instalaciones contra incendios según las normativas vigentes.</p>
+                </div>
+                <div class="consulting-card">
+                    <img src="images/pruebas.jpg" alt="Pruebas">
+                    <h3>Pruebas y Validaciones</h3>
+                    <p>Realizamos pruebas exhaustivas de equipos e instalaciones para garantizar su correcto funcionamiento y cumplimiento normativo.</p>
+                </div>
+                <div class="consulting-card">
+                    <img src="images/cursos.jpg" alt="Cursos">
+                    <h3>Cursos de Capacitación</h3>
+                    <p>Ofrecemos cursos certificados de primeros auxilios y manejo de equipos contra incendios para su personal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certification-section">
+        <div class="container">
+            <div class="certification-content">
+                <h2 class="section-title">Nuestras Certificaciones</h2>
+                <div class="certification-list">
+                    <ul>
+                        <li>Certificación por la Secretaría del Trabajo y Previsión Social</li>
+                        <li>Aprobación de Protección Civil</li>
+                        <li>Certificación en Normas Oficiales Mexicanas (NOM)</li>
+                        <li>Certificación internacional en sistemas contra incendios</li>
+                        <li>Instructores certificados para capacitación</li>
+                        <li>Autorización para emitir certificados oficiales</li>
+                    </ul>
+                </div>
+                <p>Todos nuestros servicios cumplen con los más altos estándares de calidad y seguridad requeridos por las autoridades mexicanas e internacionales.</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20asesoría" 
+       class="whatsapp-button" 
+       target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" 
+             width="32" 
+             height="32">
+    </a>
 
     <footer>
         <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
     </footer>
 </body>
-
 </html>
