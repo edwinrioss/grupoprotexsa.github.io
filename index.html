@@ -4,209 +4,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Protexsa - Equipos Contra Incendio</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Grupo Protexsa - Expertos en Seguridad Contra Incendios en México</title>
+    <!-- Atributos de precarga para recursos críticos -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/carrrusel.js" as="script">
+    <!-- Precargar las primeras imágenes críticas -->
+    <link rel="preload" href="images/equipo.jpg" as="image">
+    <meta name="description"
+        content="Servicios profesionales de seguridad contra incendios en el Sur de México. Equipamiento, mantenimiento y asesoría para la protección de su negocio. Certificados por STPS y Protección Civil.">
+    <meta name="keywords"
+        content="equipos contra incendio, seguridad contra incendios, extintores, mantenimiento contra incendios, asesoría seguridad, Protexsa, México">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Grupo Protexsa - Expertos en Seguridad Contra Incendios">
+    <meta property="og:description"
+        content="Soluciones profesionales en seguridad contra incendios. Servicio certificado en México.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://edwinrioss.github.io/grupoprotexsa.github.io/">
+
+    <!-- Meta tag de robots y mejoras SEO adicionales -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Grupo Protexsa">
+    <meta name="geo.region" content="MX">
+    <meta name="geo.placename" content="Sur de México">
+
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Grupo Protexsa",
+      "image": "images/logo.jpg",
+      "description": "Empresa líder en servicios de seguridad contra incendios en el Sur de México",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MX"
+      },
+      "telephone": "+529983290928",
+      "priceRange": "$$",
+      "sameAs": [
+        "https://wa.me/+529983290928"
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Añade canonical para evitar contenido duplicado -->
+    <link rel="canonical" href="https://edwinrioss.github.io/grupoprotexsa.github.io/">
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="container">
-            <div class="logo">PROTEXSA</div>
+            <div class="logo">
+                <h1>PROTEXSA</h1> <!-- Mejora SEO: Convertir logo en H1 -->
+            </div>
             <div class="nav-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#inicio" title="Inicio">Inicio</a>
+                <a href="#servicios" title="Nuestros Servicios">Servicios</a>
+                <a href="#contacto" title="Contáctanos">Contacto</a>
             </div>
         </div>
     </nav>
-
-    <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Expertos en Seguridad Contra Incendios</h1>
-            <p>Protegemos lo que más importa con soluciones profesionales contra incendios</p>
-            <a href="#contacto" class="cta-button">Solicitar Cotización</a>
-        </div>
-    </section>
-
-    <section class="services" id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="services-container">
-            <div class="service-card" onclick="window.location.href='equipos-contra-incendio.html'">
-                <img src="images/equipo.jpg" alt="Equipos Contra Incendio">
-                <h3>Equipos Contra Incendio</h3>
-                <p>Soluciones completas en equipamiento contra incendios</p>
+    <main role="main">
+        <section class="hero" id="inicio">
+            <div class="container">
+                <h2>Expertos en Seguridad Contra Incendios</h2>
+                <p>Protegemos lo que más importa con soluciones profesionales contra incendios</p>
+                <a href="#contacto" class="cta-button" title="Solicitar cotización de servicios">Solicitar
+                    Cotización</a>
             </div>
-        
-            <div class="service-card" onclick="window.location.href='mantenimiento.html'">
-                <img src="images/maintenance.png" alt="Mantenimiento">
-                <h3>Mantenimiento</h3>
-                <p>Servicios de mantenimiento preventivo y correctivo</p>
-            </div>
-        
-            <div class="service-card" onclick="window.location.href='asesoria.html'">
-                <img src="images/consulting.png" alt="Asesoría">
-                <h3>Asesoría</h3>
-                <p>Consultoría especializada en seguridad contra incendios</p>
-            </div>
-        </div>
-      </section>
+        </section>
 
-    <!-- Carrusel -->
-    <section class="carousel-section">
-        <div class="container">
-            <h2>Nuestro Trabajo</h2>
-            <div class="carousel">
-                <div class="carousel-container">
-                    <img src="images/slide1.jpg" alt="Imagen 1" class="carousel-item">
-                    <img src="images/slide2.jpg" alt="Imagen 2" class="carousel-item">
-                    <img src="images/slide3.jpg" alt="Imagen 3" class="carousel-item">
-                    <img src="images/slide4.jpg" alt="Imagen 4" class="carousel-item">
-                    <img src="images/slide5.jpg" alt="Imagen 5" class="carousel-item">
-                    <img src="images/slide6.jpg" alt="Imagen 6" class="carousel-item">
-                    <img src="images/slide7.jpg" alt="Imagen 7" class="carousel-item">
-                    <img src="images/slide8.jpg" alt="Imagen 8" class="carousel-item">
-                    <img src="images/slide9.jpg" alt="Imagen 9" class="carousel-item">
+        <section class="services" id="servicios">
+            <h2>Nuestros Servicios de Protección Contra Incendio</h2>
+            <div class="services-container">
+                <div class="service-card" onclick="window.location.href='equipos-contra-incendio.html'" itemscope
+                    itemtype="https://schema.org/Service">
+                    <img src="images/equipo.jpg" alt="Equipos contra incendio profesionales y certificados" width="300"
+                        height="200" loading="lazy">
+                    <h3 itemprop="name">Equipos Contra Incendio</h3>
+                    <div itemprop="description">
+                        <p>Soluciones completas en equipamiento contra incendios para empresas y negocios. Ofrecemos:
+                        </p>
+                        <ul>
+                            <li>Extintores certificados de todos los tipos (ABC, CO2, K, etc.)</li>
+                            <li>Sistemas de detección temprana de humo</li>
+                            <li>Gabinetes contra incendio completos</li>
+                            <li>Señalización normativa actualizada</li>
+                        </ul>
+                        <p>Todos nuestros equipos cumplen con las normativas vigentes de la STPS y Protección Civil.</p>
+                    </div>
+                    <meta itemprop="serviceType" content="Equipamiento contra incendios" />
                 </div>
-                <button class="carousel-button prev">&lt;</button>
-                <button class="carousel-button next">&gt;</button>
+
+                <div class="service-card" onclick="window.location.href='mantenimiento.html'" itemscope
+                    itemtype="https://schema.org/Service">
+                    <img src="images/maintenance.png"
+                        alt="Mantenimiento preventivo y correctivo de sistemas contra incendios" width="300"
+                        height="200" loading="lazy">
+                    <h3 itemprop="name">Mantenimiento a Equipos Contra Incendio</h3>
+                    <div itemprop="description">
+                        <p>Servicios profesionales de mantenimiento preventivo y correctivo para garantizar el
+                            funcionamiento óptimo de sus sistemas de protección:</p>
+                        <ul>
+                            <li>Recarga y mantenimiento de extintores</li>
+                            <li>Revisión y prueba de sistemas hidráulicos</li>
+                            <li>Verificación de sistemas de detección</li>
+                            <li>Mantenimiento programado según normativa</li>
+                        </ul>
+                        <p>Contamos con técnicos certificados y emitimos constancias válidas ante autoridades.</p>
+                    </div>
+                    <meta itemprop="serviceType" content="Mantenimiento de sistemas contra incendios" />
+                </div>
+
+                <div class="service-card" onclick="window.location.href='asesoria.html'" itemscope
+                    itemtype="https://schema.org/Service">
+                    <img src="images/consulting.png"
+                        alt="Asesoría profesional y cursos certificados de primeros auxilios" width="300" height="200"
+                        loading="lazy">
+                    <h3 itemprop="name">Asesoría y Cursos de Primeros Auxilios</h3>
+                    <div itemprop="description">
+                        <p>Consultoría especializada en seguridad contra incendios y certificaciones avaladas por el
+                            gobierno:</p>
+                        <ul>
+                            <li>Cursos de primeros auxilios certificados</li>
+                            <li>Formación de brigadas de emergencia</li>
+                            <li>Planes de evacuación personalizados</li>
+                            <li>Simulacros y evaluación de riesgos</li>
+                        </ul>
+                        <p>Nuestros instructores cuentan con certificaciones nacionales e internacionales en protección
+                            civil y seguridad industrial.</p>
+                    </div>
+                    <meta itemprop="serviceType" content="Capacitación y asesoría en seguridad" />
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="contact" id="contacto">
-        <div class="container">
-            <h2>Contáctanos</h2>
-            <div class="contact-form">
-                <form action="https://formspree.io/f/mvzzgewk" method="POST" id="contactForm">
-                    <input type="hidden" name="_next"
-                        value="https://edwinrioss.github.io/grupoprotexsa.github.io/?submitted=true">
-                    <input type="hidden" name="_subject" value="Nuevo contacto de Protexsa">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_autoresponse"
-                        value="Gracias por contactarnos, en breve nos comunicaremos contigo.">
-                    <div class="form-group">
-                        <input type="text" name="nombre" placeholder="Nombre" required>
+        <!-- Carrusel con mejoras -->
+        <section class="carousel-section">
+            <div class="container">
+                <h2>Nuestro Trabajo</h2>
+                <div class="carousel">
+                    <div class="carousel-container">
+                        <img src="images/slide1.jpg" alt="Unidades móviles de extinción de incendios en servicio"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide2.jpg" alt="Flota de extintores de CO2 para sistemas industriales"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide3.jpg" alt="Unidades móviles PFF con equipamiento especializado"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide4.jpg" alt="Extintores de CO2 instalados en área de manufactura"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide5.jpg" alt="Aplicación profesional de retardante ignífugo en estructuras"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide6.jpg"
+                            alt="Estación de extintores CO2 para protección de equipos electrónicos"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide7.jpg" alt="Extintores de CO2 instalados según normativa STPS"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide8.jpg" alt="Unidad móvil equipada para emergencias en zonas industriales"
+                            class="carousel-item" width="600" height="400" loading="lazy">
+                        <img src="images/slide9.jpg"
+                            alt="Aplicación de tratamiento ignífugo en palapa exterior certificado"
+                            class="carousel-item" width="600" height="400" loading="lazy">
                     </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="telefono" placeholder="Teléfono">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Enviar Mensaje</button>
-                </form>
-                <!-- Botón flotante de WhatsApp -->
-                <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios"
-                    class="whatsapp-button" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                        width="32" height="32">
-                </a>
+                    <button class="carousel-button prev" aria-label="Anterior" role="button">&lt;</button>
+                    <button class="carousel-button next" aria-label="Siguiente" role="button">&gt;</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="contact" id="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mvzzgewk" method="POST" id="contactForm" role="form"
+                        aria-label="Formulario de contacto">
+                        <input type="hidden" name="_next"
+                            value="https://edwinrioss.github.io/grupoprotexsa.github.io/?submitted=true">
+                        <input type="hidden" name="_subject" value="Nuevo contacto de Protexsa">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_autoresponse"
+                            value="Gracias por contactarnos, en breve nos comunicaremos contigo.">
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="telefono" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Enviar Mensaje</button>
+                    </form>
+
+                    <!-- Botón flotante de WhatsApp -->
+                    <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios"
+                        class="whatsapp-button" target="_blank" rel="noopener noreferrer"
+                        aria-label="Contactar por WhatsApp">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                            width="32" height="32">
+                    </a>
+                </div>
+            </div>
+        </section>
 
 
-    <script>
-        // Función para limpiar el formulario
-        function resetForm() {
-            if (window.location.search.includes('submitted=true')) {
-                document.getElementById('contactForm').reset();
-                // Limpia el parámetro de la URL
-                window.history.replaceState({}, document.title, window.location.pathname);
+        <script>
+            // Función para limpiar el formulario
+            function resetForm() {
+                if (window.location.search.includes('submitted=true')) {
+                    document.getElementById('contactForm').reset();
+                    // Limpia el parámetro de la URL
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
             }
+
+            // Ejecutar cuando la página cargue
+            window.onload = resetForm;
+        </script>
+
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Grupo Protexsa",
+      "image": "images/logo.jpg",
+      "description": "Empresa líder en servicios de seguridad contra incendios en el Sur de México",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Quintana Roo",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.846",
+        "longitude": "-86.8756"
+      },
+      "telephone": "+529983290928",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
         }
-
-        // Ejecutar cuando la página cargue
-        window.onload = resetForm;
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.querySelector('.carousel-container');
-            const items = document.querySelectorAll('.carousel-item');
-            const prevButton = document.querySelector('.carousel-button.prev');
-            const nextButton = document.querySelector('.carousel-button.next');
-            let currentIndex = 0;
-
-            function updateCarousel() {
-                items.forEach(item => item.classList.remove('active'));
-                items[currentIndex].classList.add('active');
-            }
-
-            nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % items.length;
-                updateCarousel();
-            });
-
-            prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + items.length) % items.length;
-                updateCarousel();
-            });
-
-            // Auto-avance cada 5 segundos
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % items.length;
-                updateCarousel();
-            }, 5000);
-        });
-    </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const carousel = document.querySelector('.carousel-container');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-        let currentIndex = 0;
-    
-        function updateCarousel() {
-            // Remove active class from all items
-            items.forEach(item => {
-                item.classList.remove('active', 'next', 'prev');
-            });
-    
-            // Add appropriate classes for smooth transition
-            items[currentIndex].classList.add('active');
-            
-            // Prepare next and previous slides
-            const nextIndex = (currentIndex + 1) % items.length;
-            const prevIndex = (currentIndex - 1 + items.length) % items.length;
-            
-            items[nextIndex].classList.add('next');
-            items[prevIndex].classList.add('prev');
+      ],
+      "areaServed": [
+        {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "20.846",
+            "longitude": "-86.8756"
+          },
+          "geoRadius": "100000"
         }
-    
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-        });
-    
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            updateCarousel();
-        });
-    
-        // Auto-advance every 5 seconds
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-        }, 5000);
-    
-        // Initial setup
-        updateCarousel();
-    });
+      ],
+      "sameAs": [
+        "https://wa.me/+529983290928"
+      ]
+    }
     </script>
 
-<script src="js/carrrusel.js"></script>
+        <script src="js/carrrusel.js"></script>
+    </main>
 
-
-
-
+    <!-- SEO Local con información adicional al pie de página -->
     <footer>
-        <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
+        <div class="container">
+            <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
+            <address itemscope itemtype="https://schema.org/Organization">
+                <p>
+                    <span itemprop="name">Grupo Protexsa</span>
+                    <!-- No incluir dirección física si no deseas mostrarla -->
+                    <span>Servicio en todo el Sur de México</span>
+                    <br>
+                    <span>Tel: <a href="tel:+529983290928" itemprop="telephone">+52 998 329 0928</a></span>
+                    <br>
+                    <span>Horario de atención: Lunes a Viernes 9:00 - 18:00</span>
+                </p>
+            </address>
+        </div>
     </footer>
 </body>
 
