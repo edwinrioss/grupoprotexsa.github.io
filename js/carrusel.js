@@ -5,63 +5,78 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     let isTransitioning = false;
 
-    function updateCarousel(direction) {
+    // Función para inicializar el carrusel
+    function initCarousel() {
+        // Establecer la primera imagen como activa
+        items[0].classList.add('active');
+        
+        // Si hay más de una imagen, establecer la segunda como next
+        if (items.length > 1) {
+            items[1].classList.add('next');
+        }
+        
+        // Si hay más de dos imágenes, establecer la última como prev
+        if (items.length > 2) {
+            items[items.length - 1].classList.add('prev');
+        }
+    }
+
+    // Función para mover al siguiente o anterior
+    function moveCarousel(direction) {
         if (isTransitioning) return;
         isTransitioning = true;
 
-        const nextIndex = direction === 'next' 
-            ? (currentIndex + 1) % items.length 
-            : (currentIndex - 1 + items.length) % items.length;
-
-        // Posicionar siguiente/anterior imagen
-        items[nextIndex].style.transform = direction === 'next' 
-            ? 'translateX(100%)' 
-            : 'translateX(-100%)';
+        // Calcular los índices
+        const prevIndex = (currentIndex - 1 + items.length) % items.length;
+        const nextIndex = (currentIndex + 1) % items.length;
         
-        // Asegurar que la imagen actual está visible
-        items[currentIndex].style.transform = 'translateX(0)';
+        // Quitar todas las clases actuales
+        items.forEach(item => {
+            item.classList.remove('active', 'next', 'prev');
+        });
 
-        // Forzar reflow
-        items[nextIndex].offsetHeight;
+        if (direction === 'next') {
+            // Avanzar al siguiente
+            currentIndex = nextIndex;
+            const newNextIndex = (currentIndex + 1) % items.length;
+            
+            // Aplicar las nuevas clases
+            items[prevIndex].classList.add('prev');
+            items[currentIndex].classList.add('active');
+            items[newNextIndex].classList.add('next');
+        } else {
+            // Retroceder al anterior
+            currentIndex = prevIndex;
+            const newPrevIndex = (currentIndex - 1 + items.length) % items.length;
+            
+            // Aplicar las nuevas clases
+            items[newPrevIndex].classList.add('prev');
+            items[currentIndex].classList.add('active');
+            items[nextIndex].classList.add('next');
+        }
 
-        // Animar el deslizamiento
-        items[currentIndex].style.transform = direction === 'next' 
-            ? 'translateX(-100%)' 
-            : 'translateX(100%)';
-        items[nextIndex].style.transform = 'translateX(0)';
-
-        // Actualizar índice
-        currentIndex = nextIndex;
-
+        // Permitir una nueva transición después de que termine la actual
         setTimeout(() => {
             isTransitioning = false;
-            // Reposicionar las demás imágenes fuera de vista
-            items.forEach((item, index) => {
-                if (index !== currentIndex) {
-                    item.style.transform = 'translateX(100%)';
-                }
-            });
-        }, 1000);
+        }, 1000); // Debe coincidir con la duración de la transición CSS
     }
 
+    // Agregar eventos a los botones
     nextButton.addEventListener('click', () => {
-        if (!isTransitioning) updateCarousel('next');
+        moveCarousel('next');
     });
 
     prevButton.addEventListener('click', () => {
-        if (!isTransitioning) updateCarousel('prev');
+        moveCarousel('prev');
     });
 
-    // Auto-avance
+    // Inicializar el carrusel
+    initCarousel();
+
+    // Auto-avance cada 5 segundos
     setInterval(() => {
-        if (!isTransitioning) updateCarousel('next');
-    }, 5000);
-
-    // Configuración inicial
-    items[currentIndex].style.transform = 'translateX(0)';
-    items.forEach((item, index) => {
-        if (index !== currentIndex) {
-            item.style.transform = 'translateX(100%)';
+        if (!isTransitioning) {
+            moveCarousel('next');
         }
-    });
+    }, 5000);
 });
