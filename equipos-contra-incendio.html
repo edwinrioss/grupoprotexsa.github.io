@@ -47,10 +47,13 @@
             padding: 3rem 0;
         }
 
+        .equipment-section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
         .equipment-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             padding: 20px;
         }
@@ -62,6 +65,9 @@
             padding: 25px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .equipment-card:hover {
