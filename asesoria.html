@@ -3,25 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protexsa - Servicios de Asesoría</title>
+    <meta name="description" content="Protexsa ofrece servicios de asesoría, certificaciones oficiales y cursos de capacitación en protección contra incendios en México.">
+    <meta name="keywords" content="asesoría protección incendios, certificaciones protección civil, cursos capacitación incendios, normativas contra incendios México">
+    <title>Protexsa - Servicios de Asesoría y Certificaciones | Expertos en Protección Contra Incendios</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="canonical" href="https://www.protexsa.com/asesoria.html">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Protexsa - Servicios de Asesoría en Protección Contra Incendios">
+    <meta property="og:description" content="Certificaciones oficiales y cursos de capacitación con los más altos estándares de calidad para su seguridad.">
+    <meta property="og:url" content="https://www.protexsa.com/asesoria.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.protexsa.com/images/og-asesoria.jpg">
+    
     <style>
+        /* Estilos específicos de la página */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-test.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-test.jpg');
             background-size: cover;
             background-position: center;
-            padding: 150px 0;
+            padding: 120px 0;
             color: white;
             text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
 
         .consulting-section {
-            padding: 50px 0;
+            padding: 3rem 0;
         }
 
         .consulting-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             padding: 20px;
         }
@@ -29,28 +57,54 @@
         .consulting-card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 25px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .consulting-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
         .consulting-card img {
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .consulting-card h3 {
+            color: #d32f2f;
+            margin-bottom: 12px;
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 40px;
             color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #d32f2f;
         }
 
         .certification-section {
             background-color: #f9f9f9;
-            padding: 50px 0;
+            padding: 4rem 0;
         }
 
         .certification-content {
@@ -63,10 +117,10 @@
         .certification-list {
             text-align: left;
             margin: 20px 0;
-            padding: 20px;
+            padding: 30px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .certification-list ul {
@@ -76,7 +130,7 @@
 
         .certification-list li {
             margin: 15px 0;
-            padding-left: 25px;
+            padding-left: 30px;
             position: relative;
         }
 
@@ -85,13 +139,46 @@
             position: absolute;
             left: 0;
             color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        /* Estilo del botón WhatsApp fijo */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer responsive */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">PROTEXSA</div>
+            <div class="logo" aria-label="Logo Protexsa">PROTEXSA</div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <div class="nav-links">
                 <a href="index.html">Inicio</a>
                 <a href="index.html#servicios">Servicios</a>
@@ -112,17 +199,17 @@
             <h2 class="section-title">Certificaciones y Aprobaciones</h2>
             <div class="consulting-container">
                 <div class="consulting-card">
-                    <img src="images/test.jpg" alt="Certificaciones">
+                    <img src="images/test.jpg" alt="Certificaciones oficiales de protección contra incendios">
                     <h3>Certificaciones Oficiales</h3>
                     <p>Contamos con todas las certificaciones necesarias para validar y certificar equipos e instalaciones contra incendios según las normativas vigentes.</p>
                 </div>
                 <div class="consulting-card">
-                    <img src="images/test.jpg" alt="Pruebas">
+                    <img src="images/test.jpg" alt="Pruebas y validaciones de equipos contra incendios">
                     <h3>Pruebas y Validaciones</h3>
                     <p>Realizamos pruebas exhaustivas de equipos e instalaciones para garantizar su correcto funcionamiento y cumplimiento normativo.</p>
                 </div>
                 <div class="consulting-card">
-                    <img src="images/test.jpg" alt="Cursos">
+                    <img src="images/test.jpg" alt="Cursos de capacitación en prevención de incendios">
                     <h3>Cursos de Capacitación</h3>
                     <p>Ofrecemos cursos certificados de primeros auxilios y manejo de equipos contra incendios para su personal.</p>
                 </div>
@@ -151,7 +238,9 @@
 
     <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20asesoría" 
        class="whatsapp-button" 
-       target="_blank">
+       target="_blank"
+       rel="noopener"
+       aria-label="Contactar por WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
              alt="WhatsApp" 
              width="32" 
@@ -161,5 +250,32 @@
     <footer>
         <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Script para menu responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('change', function() {
+                    if (this.checked) {
+                        navLinks.style.display = 'block';
+                    } else {
+                        navLinks.style.display = '';
+                    }
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                const links = navLinks.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.checked = false;
+                        navLinks.style.display = '';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

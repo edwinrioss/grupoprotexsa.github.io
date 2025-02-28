@@ -3,25 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protexsa - Equipos Contra Incendio</title>
+    <meta name="description" content="Protexsa ofrece equipos profesionales contra incendios, recarga de extintores, equipo de seguridad y señalización para su empresa en México.">
+    <meta name="keywords" content="extintores, equipo contra incendios, recarga extintores, PQS, CO2, equipos de bombero, señalización seguridad">
+    <title>Protexsa - Equipos Contra Incendio | Soluciones Profesionales para Prevención</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="canonical" href="https://www.protexsa.com/equipos-contra-incendio.html">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Protexsa - Equipos Contra Incendio y Recargas">
+    <meta property="og:description" content="Soluciones profesionales en equipos contra incendios, recargas de extintores y señalización preventiva.">
+    <meta property="og:url" content="https://www.protexsa.com/equipos-contra-incendio.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.protexsa.com/images/og-equipos.jpg">
+    
     <style>
+        /* Estilos específicos de la página */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-test.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-test.jpg');
             background-size: cover;
             background-position: center;
-            padding: 150px 0;
+            padding: 120px 0;
             color: white;
             text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
 
         .equipment-section {
-            padding: 50px 0;
+            padding: 3rem 0;
+        }
+
+        .equipment-section:nth-child(even) {
+            background-color: #f9f9f9;
         }
 
         .equipment-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             padding: 20px;
         }
@@ -29,30 +61,95 @@
         .equipment-card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 25px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
         .equipment-card img {
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .equipment-card h3 {
+            color: #d32f2f;
+            margin-bottom: 12px;
+        }
+
+        .equipment-card p {
+            flex-grow: 1;
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 40px;
             color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #d32f2f;
+        }
+        
+        /* Estilo del botón WhatsApp fijo */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer responsive */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">PROTEXSA</div>
+            <div class="logo" aria-label="Logo Protexsa">PROTEXSA</div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <div class="nav-links">
                 <a href="index.html">Inicio</a>
                 <a href="index.html#servicios">Servicios</a>
@@ -73,22 +170,22 @@
             <h2 class="section-title">Servicios de Recargas de Extintores</h2>
             <div class="equipment-container">
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Extintor PQS">
+                    <img src="images/test.jpg" alt="Recarga de extintores de Polvo Químico Seco (PQS)">
                     <h3>Recarga de Polvo (PQS)</h3>
                     <p>Ideal para fuegos clase A, B y C. Efectivo para la mayoría de los incendios comunes en oficinas, hogares e industrias.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Extintor CO2">
+                    <img src="images/test.jpg" alt="Recarga de extintores de Bióxido de Carbono (CO2)">
                     <h3>Bióxido de Carbono (CO2)</h3>
                     <p>Perfecto para fuegos eléctricos y equipos sensibles. No deja residuos y es ideal para áreas con equipos electrónicos.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Extintor AAP">
+                    <img src="images/test.jpg" alt="Recarga de extintores de Agua a Presión (AAP)">
                     <h3>Agua a Presión (AAP)</h3>
                     <p>Específico para fuegos clase A. Excelente para materiales sólidos como madera, papel y telas.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Extintor AFFF">
+                    <img src="images/test.jpg" alt="Recarga de extintores de espuma AFFF">
                     <h3>AFFF</h3>
                     <p>Espuma formadora de película acuosa, ideal para fuegos de líquidos inflamables y protección de derrames.</p>
                 </div>
@@ -101,22 +198,22 @@
             <h2 class="section-title">Equipo de Seguridad</h2>
             <div class="equipment-container">
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Equipo de Bombero">
+                    <img src="images/test.jpg" alt="Equipo completo para bomberos profesional">
                     <h3>Equipos de Bombero</h3>
                     <p>Trajes completos certificados para protección contra fuego y altas temperaturas.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Cascos">
+                    <img src="images/test.jpg" alt="Cascos de seguridad para brigadas contra incendio">
                     <h3>Cascos</h3>
                     <p>Cascos de seguridad certificados con resistencia al impacto y altas temperaturas.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Guantes">
+                    <img src="images/test.jpg" alt="Guantes resistentes al fuego para brigadas">
                     <h3>Guantes</h3>
                     <p>Guantes especializados resistentes al fuego y con gran destreza manual.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Botas">
+                    <img src="images/test.jpg" alt="Botas de seguridad para equipos de emergencia">
                     <h3>Botas</h3>
                     <p>Botas de seguridad con protección térmica y resistencia a químicos.</p>
                 </div>
@@ -129,17 +226,17 @@
             <h2 class="section-title">Tipos de Señalamientos</h2>
             <div class="equipment-container">
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Señalamientos Preventivos">
+                    <img src="images/test.jpg" alt="Señalamientos preventivos para áreas de riesgo">
                     <h3>Preventivos</h3>
                     <p>Señales que advierten sobre riesgos potenciales y medidas de precaución.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Señalamientos Restrictivos">
+                    <img src="images/test.jpg" alt="Señalamientos restrictivos de seguridad">
                     <h3>Restrictivos</h3>
                     <p>Señales que indican prohibiciones y limitaciones en áreas específicas.</p>
                 </div>
                 <div class="equipment-card">
-                    <img src="images/test.jpg" alt="Señalamientos Informativos">
+                    <img src="images/test.jpg" alt="Señalamientos informativos de evacuación">
                     <h3>Informativos</h3>
                     <p>Señales que proporcionan información sobre rutas de evacuación y equipos de seguridad.</p>
                 </div>
@@ -149,7 +246,9 @@
 
     <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20equipos%20contra%20incendio" 
        class="whatsapp-button" 
-       target="_blank">
+       target="_blank"
+       rel="noopener"
+       aria-label="Contactar por WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
              alt="WhatsApp" 
              width="32" 
@@ -159,5 +258,32 @@
     <footer>
         <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Script para menu responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('change', function() {
+                    if (this.checked) {
+                        navLinks.style.display = 'block';
+                    } else {
+                        navLinks.style.display = '';
+                    }
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                const links = navLinks.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.checked = false;
+                        navLinks.style.display = '';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

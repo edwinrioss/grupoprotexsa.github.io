@@ -3,25 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protexsa - Servicios de Mantenimiento</title>
+    <meta name="description" content="Servicios profesionales de mantenimiento preventivo y correctivo para equipos contra incendios y aplicación de retardantes en palapas, alfombras y madera.">
+    <meta name="keywords" content="mantenimiento equipos incendio, retardante fuego, palapa ignífuga, mantenimiento preventivo, mantenimiento correctivo">
+    <title>Protexsa - Servicios de Mantenimiento | Especialistas en Aplicación de Retardantes</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="canonical" href="https://www.protexsa.com/mantenimiento.html">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Protexsa - Servicios de Mantenimiento para Equipos Contra Incendio">
+    <meta property="og:description" content="Mantenimiento profesional y aplicación de retardantes para garantizar la seguridad de sus instalaciones.">
+    <meta property="og:url" content="https://www.protexsa.com/mantenimiento.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.protexsa.com/images/og-mantenimiento.jpg">
+    
     <style>
+        /* Estilos específicos de la página */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-test.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-test.jpg');
             background-size: cover;
             background-position: center;
-            padding: 150px 0;
+            padding: 120px 0;
             color: white;
             text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
 
         .maintenance-section {
-            padding: 50px 0;
+            padding: 3rem 0;
+        }
+
+        .maintenance-section:nth-child(even) {
+            background-color: #f9f9f9;
         }
 
         .maintenance-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             padding: 20px;
         }
@@ -29,102 +61,135 @@
         .maintenance-card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 25px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .maintenance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
         .maintenance-card img {
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .maintenance-card h3 {
+            color: #d32f2f;
+            margin-bottom: 12px;
+        }
+
+        .maintenance-card p {
+            flex-grow: 1;
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 40px;
             color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #d32f2f;
+        }
+        
+        /* Estilo del botón WhatsApp fijo */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer responsive */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        /* Estilos específicos para el menú responsivo */
+        .menu-toggle {
+            display: none;
+        }
+        
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding-top: 1rem;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px 0;
+                margin: 0;
+            }
+            
+            .menu-icon {
+                display: block;
+            }
+            
+            .menu-toggle:checked ~ .nav-links {
+                display: block;
+            }
+            
+            .navbar .container {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">PROTEXSA</div>
+            <div class="logo" aria-label="Logo Protexsa">PROTEXSA</div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <div class="nav-links">
                 <a href="index.html">Inicio</a>
                 <a href="index.html#servicios">Servicios</a>
                 <a href="index.html#contacto">Contacto</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Servicios de Mantenimiento</h1>
-            <p>Mantenimiento profesional para garantizar la seguridad de sus instalaciones</p>
-        </div>
-    </section>
-
-    <section class="maintenance-section">
-        <div class="container">
-            <h2 class="section-title">Tipos de Mantenimiento</h2>
-            <div class="maintenance-container">
-                <div class="maintenance-card">
-                    <img src="images/test.jpg" alt="Mantenimiento Preventivo">
-                    <h3>Mantenimiento Preventivo</h3>
-                    <p>Inspecciones regulares y mantenimiento programado para prevenir fallos y garantizar el funcionamiento óptimo de sus equipos contra incendios.</p>
-                </div>
-                <div class="maintenance-card">
-                    <img src="images/test.jpg" alt="Mantenimiento Correctivo">
-                    <h3>Mantenimiento Correctivo</h3>
-                    <p>Servicio de reparación y corrección de fallas en equipos contra incendios, garantizando una respuesta rápida y eficiente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="maintenance-section">
-        <div class="container">
-            <h2 class="section-title">Aplicación de Retardante</h2>
-            <div class="maintenance-container">
-                <div class="maintenance-card">
-                    <img src="images/test.jpg" alt="Palapa Interior">
-                    <h3>Palapa Interior</h3>
-                    <p>Tratamiento especializado para palapas interiores que proporciona protección contra el fuego sin afectar la estética natural.</p>
-                </div>
-                <div class="maintenance-card">
-                    <img src="images/test.jpg" alt="Palapa Exterior">
-                    <h3>Palapa Exterior</h3>
-                    <p>Aplicación de retardante resistente a la intemperie para palapas exteriores, garantizando durabilidad y protección.</p>
-                </div>
-                <div class="maintenance-card">
-                    <img src="images/test.jpg" alt="Alfombra">
-                    <h3>Alfombra</h3>
-                    <p>Tratamiento ignífugo para alfombras que no altera su textura ni apariencia, ideal para hoteles y espacios comerciales.</p>
-                </div>
-                <div class="maintenance-card">
-                    <img src="images/test.jpg" alt="Madera">
-                    <h3>Madera</h3>
-                    <p>Protección contra fuego para superficies de madera, preservando su aspecto natural mientras aumenta su resistencia al fuego.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/+529983290928?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20mantenimiento" 
-       class="whatsapp-button" 
-       target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-             alt="WhatsApp" 
-             width="32" 
-             height="32">
-    </a>
-
-    <footer>
-        <p>&copy; 2025 Grupo Protexsa. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
